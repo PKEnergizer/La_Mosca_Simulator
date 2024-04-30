@@ -55,29 +55,6 @@ public class Movimiento_Mosca : MonoBehaviour
         // Aplicar el movimiento al jugador
         transform.Translate(movimientoActual * velocidad * Time.deltaTime);
 
-        // Verificar si la sandalia debe empezar a moverse
-        CheckSandaliaMovement();
     }
 
-    void CheckSandaliaMovement()
-    {
-        // Si la sandalia no se está moviendo, empezar el movimiento
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            // Iniciar el movimiento de la sandalia
-            StartSandaliaMovement();
-        }
-    }
-
-    void StartSandaliaMovement()
-    {
-        // Buscar todas las sandalias en la escena
-        FlipFlopAI[] flipFlops = FindObjectsOfType<FlipFlopAI>();
-
-        // Iniciar el movimiento de cada sandalia
-        foreach (FlipFlopAI flipFlop in flipFlops)
-        {
-            flipFlop.StartMovement();
-        }
-    }
 }

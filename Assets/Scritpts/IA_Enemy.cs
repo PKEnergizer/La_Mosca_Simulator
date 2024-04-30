@@ -74,13 +74,21 @@ public class IA_Enemy : MonoBehaviour
 
     void UpdateAnimation()
     {
-        // Aquí puedes agregar la lógica para actualizar la animación basada en la dirección del enemigo
-        Vector2 direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+        // Obtener la dirección del movimiento
+        Vector2 movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
 
-        Debug.Log("Horizontal: " + direction.x);
-        Debug.Log("Vertical: " + direction.y);
+        // Determinar si Jerry se está moviendo hacia la derecha o izquierda
+        bool movingRight = movementDirection.x > 0;
+        bool movingLeft = movementDirection.x < 0;
 
-        animator.SetFloat("Horizontal", direction.x);
-        animator.SetFloat("Vertical", direction.y);
+        // Determinar si Jerry se está moviendo hacia arriba o abajo
+        bool movingUp = movementDirection.y > 0;
+        bool movingDown = movementDirection.y < 0;
+
+        // Actualizar los parámetros del Animator según la dirección del movimiento
+        animator.SetBool("AnimacionDerecha", movingRight);
+        animator.SetBool("AnimacionIzquierda", movingLeft);
+        animator.SetBool("AnimacionArriba", movingUp);
+        animator.SetBool("AnimacionAbajo", movingDown);
     }
 }
