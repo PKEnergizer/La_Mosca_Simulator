@@ -1,55 +1,43 @@
 using UnityEngine;
-using System.Collections;
-using TMPro;
 
 public class DialogManager : MonoBehaviour
 {
-    public TextMeshProUGUI dialogText;
-    public AudioClip letterSound;
-    public float letterInterval = 0.05f; // Intervalo entre la aparición de cada letra
+    public GameObject dialogCanvas; // Asigna el Canvas en el Inspector
+    public float displayInterval = 10.0f; // Intervalo de tiempo para mostrar el Canvas
 
-    private string currentDialog;
-    private int currentLetterIndex;
-    private AudioSource audioSource;
+    private float timer;
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        // Inicia el temporizador
+        timer = displayInterval;
     }
 
     void Update()
     {
-        // Verificar si se presiona la tecla SPACE para mostrar el diálogo
-        if (Input.GetKeyDown(KeyCode.Space))
+        // Actualiza el temporizador si el Canvas está desactivado
+        if (!dialogCanvas.activeSelf)
         {
-            currentLetterIndex = 0; // Reiniciar el índice de letras
-            StartCoroutine(ShowDialog("Este es un ejemplo de diálogo letra por letra.", letterInterval));
+            timer -= Time.deltaTime;
+
+            // Verifica si el temporizador ha llegado a cero
+            if (timer <= 0)
+            {
+                // Muestra el Canvas
+                dialogCanvas.SetActive(true);
+                Debug.Log("Canvas Activado");
+
+                // Reinicia el temporizador
+                timer = displayInterval;
+            }
         }
-    }
 
-    IEnumerator ShowDialog(string dialog, float interval)
-    {
-        currentDialog = dialog;
-        dialogText.text = "";
-
-        // Mostrar una letra cada frame
-        while (currentLetterIndex < currentDialog.Length)
+        // Verifica si se presiona la tecla SPACE y el Canvas está activo
+        if (Input.GetKeyDown(KeyCode.Space) && dialogCanvas.activeSelf)
         {
-            dialogText.text += currentDialog[currentLetterIndex];
-            currentLetterIndex++;
-
-            // Reproducir el sonido de la letra
-            PlayLetterSound();
-
-            yield return new WaitForSeconds(interval);
-        }
-    }
-
-    void PlayLetterSound()
-    {
-        if (letterSound != null)
-        {
-            audioSource.PlayOneShot(letterSound);
+            // Oculta el Canvas
+            dialogCanvas.SetActive(false);
+            Debug.Log("Canvas Desactivado");
         }
     }
 }

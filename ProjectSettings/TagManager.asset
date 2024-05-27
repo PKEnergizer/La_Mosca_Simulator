@@ -7,11 +7,15 @@ TagManager:
   - Hamburguesa
   - Mosca
   - MapCollider
+  - ColliderCarretera
+  - Coche
+  - Heart
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Foco
   - Water
   - UI
   - 
@@ -43,4 +47,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: canvasMuerte
+    uniqueID: 905635279
     locked: 0
