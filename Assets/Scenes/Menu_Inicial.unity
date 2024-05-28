@@ -1242,7 +1242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c2534aac7675948a7ea9be1f7e4fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreDeEscenaJuego: LvL_1
+  nombreDeEscenaJuego: AnimaticInicio
   intensidadVibracion: 2.4
   velocidadVibracion: 10.6
 --- !u!1 &1469573016

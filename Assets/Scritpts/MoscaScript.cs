@@ -37,6 +37,16 @@ public class MoscaScript : MonoBehaviour
                 StartCoroutine(InvulnerabilityCooldown());
             }
         }
+        else if (col.gameObject.tag == "Coche")
+        {
+            GameManager.Instance.vidas -= 5;
+            GameManager.Instance.UpdateVidas();
+
+            if (GameManager.Instance.vidas > 0)
+            {
+                StartCoroutine(InvulnerabilityCooldown());
+            }
+        }
     }
 
     IEnumerator InvulnerabilityCooldown()

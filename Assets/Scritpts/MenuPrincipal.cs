@@ -5,7 +5,7 @@ using System.Collections;
 public class MenuPrincipal : MonoBehaviour
 {
     // Nombre de las escenas
-    public string nombreDeEscenaJuego = "LvL_1";
+    public string nombreDeEscenaJuego = "AnimaticInicio";
 
     // Vibración
     private Vector3 posicionInicial;
