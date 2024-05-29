@@ -12,6 +12,11 @@ TagManager:
   - Heart
   - Enemy
   - Jerry
+  - Pizza
+  - Kebab
+  - Cereales
+  - Chees
+  - Basura
   layers:
   - Default
   - TransparentFX

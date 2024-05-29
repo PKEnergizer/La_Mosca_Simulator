@@ -296,6 +296,7 @@ GameObject:
   - component: {fileID: 29300546}
   - component: {fileID: 29300545}
   - component: {fileID: 29300548}
+  - component: {fileID: 29300549}
   m_Layer: 0
   m_Name: Mano
   m_TagString: Enemy
@@ -381,7 +382,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 29300544}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5979702, y: 0, z: 0}
+  m_LocalPosition: {x: -0.5979696, y: -0.3092105, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -409,6 +410,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &29300549
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29300544}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.09388744, y: -0.13656518}
+  m_Size: {x: 0.35700405, y: 0.4309794}
+  m_Direction: 0
 --- !u!1 &57665835
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,7 +512,7 @@ Transform:
   - {fileID: 1034175784}
   - {fileID: 517871422}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &67116642
 GameObject:
@@ -613,7 +630,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1988.5449}
 --- !u!1 &85170296
 GameObject:
@@ -662,7 +679,7 @@ GameObject:
   - component: {fileID: 101511632}
   m_Layer: 0
   m_Name: Jerry
-  m_TagString: Mosca
+  m_TagString: Jerry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1074,7 +1091,7 @@ GameObject:
   - component: {fileID: 143399961}
   m_Layer: 0
   m_Name: Basura (1)
-  m_TagString: Hamburguesa
+  m_TagString: Basura
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1106,7 +1123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f40990ef7ec9de4c984b19bf827b73c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cantidadPuntos: 300
+  cantidadPuntos: 10
   puntaje: {fileID: 880493659}
 --- !u!70 &143399962
 CapsuleCollider2D:
@@ -1679,7 +1696,7 @@ Transform:
   - {fileID: 823738747}
   - {fileID: 1028122914}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &271852330
 MonoBehaviour:
@@ -1877,7 +1894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &403424817
 Transform:
   m_ObjectHideFlags: 0
@@ -1941,6 +1958,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 404439434}
+  - component: {fileID: 404439435}
   m_Layer: 0
   m_Name: ManosController
   m_TagString: Untagged
@@ -1956,15 +1974,31 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 404439433}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -128.3, y: -13.2, z: 0}
+  m_LocalPosition: {x: -128.3, y: -9.91, z: 0}
   m_LocalScale: {x: 10.64, y: 10.64, z: 10.64}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 631082466}
   - {fileID: 29300547}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &404439435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404439433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42a6f7677fa992543a59be2f323b061e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mosca: {fileID: 869847379}
+  detectionRadius: 10
+  stopRadius: 3
+  moveSpeed: 5
 --- !u!1 &412174723
 GameObject:
   m_ObjectHideFlags: 0
@@ -2229,6 +2263,64 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &474950949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 474950951}
+  - component: {fileID: 474950950}
+  m_Layer: 0
+  m_Name: Desbloquear puerta
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!61 &474950950
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474950949}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.6564827, y: 9.726437}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 16.560722, y: 20.455452}
+  m_EdgeRadius: 0
+--- !u!4 &474950951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474950949}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 81.63, y: 91.42, z: -1.0858827}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 28
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &512200472
 GameObject:
   m_ObjectHideFlags: 0
@@ -2403,7 +2495,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.6, y: 68.8, z: -10}
+  m_LocalPosition: {x: 82.5, y: 84.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2668,7 +2760,7 @@ Transform:
   - {fileID: 203117717}
   - {fileID: 2101029614}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619394800
 GameObject:
@@ -2849,6 +2941,7 @@ GameObject:
   - component: {fileID: 631082468}
   - component: {fileID: 631082467}
   - component: {fileID: 631082469}
+  - component: {fileID: 631082470}
   m_Layer: 0
   m_Name: Mano2
   m_TagString: Enemy
@@ -2864,7 +2957,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631082465}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0.49999997, y: -0.3092105, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2962,6 +3055,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &631082470
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631082465}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.119493954, y: -0.14652304}
+  m_Size: {x: 0.3570069, y: 0.4565851}
+  m_Direction: 0
 --- !u!1 &665961817
 GameObject:
   m_ObjectHideFlags: 0
@@ -3059,7 +3168,7 @@ RectTransform:
   - {fileID: 118200077}
   - {fileID: 880493655}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3129,7 +3238,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682894141}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.6, y: 68.8, z: -10}
+  m_LocalPosition: {x: 82.5, y: 84.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3151,7 +3260,7 @@ GameObject:
   - component: {fileID: 709995859}
   m_Layer: 0
   m_Name: Basura
-  m_TagString: Hamburguesa
+  m_TagString: Basura
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3183,7 +3292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f40990ef7ec9de4c984b19bf827b73c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cantidadPuntos: 300
+  cantidadPuntos: 10
   puntaje: {fileID: 880493659}
 --- !u!70 &709995860
 CapsuleCollider2D:
@@ -3832,7 +3941,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &789567296
 GameObject:
@@ -4036,7 +4145,7 @@ Transform:
   - {fileID: 709995858}
   - {fileID: 143399960}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &823738746
 GameObject:
@@ -4305,7 +4414,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 12
   m_Sprite: {fileID: 2005323977, guid: c34b0e72839175a4791fa4ed597a45e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4325,7 +4434,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869847376}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.6, y: 68.8, z: 0}
+  m_LocalPosition: {x: 82.5, y: 84.3, z: 0}
   m_LocalScale: {x: 0.11, y: 0.11, z: 0.11}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -4493,6 +4602,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   invulnerabilityDuration: 3
   flashInterval: 0.3
+  objetoAActivar: {fileID: 403424816}
 --- !u!1 &880493654
 GameObject:
   m_ObjectHideFlags: 0
@@ -4691,7 +4801,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &887578915
 AudioSource:
@@ -4981,7 +5091,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Presiona  "W" para empezar.
+  m_text: 'INFECTA 5 PLATOS DE COMIDA
+
+
+    Presiona  "W" para empezar.
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3fe96fa1819ff01439602d895ce72ce3, type: 2}
   m_sharedMaterial: {fileID: 4453683410527383722, guid: 3fe96fa1819ff01439602d895ce72ce3, type: 2}
@@ -5115,7 +5230,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 13
   m_Sprite: {fileID: 21300000, guid: 5e95b4b3fe029c546bd952d9ac748cac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5316,7 +5431,7 @@ RectTransform:
   - {fileID: 2141509988}
   - {fileID: 20647033}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5738,7 +5853,7 @@ Transform:
   - {fileID: 1052739572}
   - {fileID: 1271207127}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1147336990
 GameObject:
@@ -5994,7 +6109,7 @@ GameObject:
   - component: {fileID: 1208681013}
   m_Layer: 0
   m_Name: Cereales
-  m_TagString: Hamburguesa
+  m_TagString: Cereales
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6026,7 +6141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f40990ef7ec9de4c984b19bf827b73c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cantidadPuntos: 300
+  cantidadPuntos: 1000
   puntaje: {fileID: 880493659}
 --- !u!70 &1208681014
 CapsuleCollider2D:
@@ -6251,7 +6366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1261603406
 Transform:
   m_ObjectHideFlags: 0
@@ -6260,7 +6375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1261603405}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 62.9, y: 75.5, z: 1.5655105}
+  m_LocalPosition: {x: 62.95484, y: 75.5, z: 1.5655105}
   m_LocalScale: {x: 1, y: 1.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6293,7 +6408,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.3973913, y: -0.9290749}
+  m_Offset: {x: -1.3973913, y: 0.12396151}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -6304,7 +6419,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.331732, y: 2.8581493}
+  m_Size: {x: 10.331732, y: 1.5486075}
   m_EdgeRadius: 0
 --- !u!1 &1271207126
 GameObject:
@@ -6885,7 +7000,7 @@ Transform:
   m_Children:
   - {fileID: 2063385477}
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1395483203
 GameObject:
@@ -6992,7 +7107,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &1395483209
 CapsuleCollider2D:
@@ -7357,7 +7472,7 @@ GameObject:
   - component: {fileID: 1436866220}
   m_Layer: 0
   m_Name: Pizza
-  m_TagString: Hamburguesa
+  m_TagString: Pizza
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7497,7 +7612,7 @@ Transform:
   - {fileID: 7630252}
   - {fileID: 1337113525}
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1470852815
 GameObject:
@@ -8017,16 +8132,16 @@ PolygonCollider2D:
       - {x: 0.71793747, y: 53.75946}
       - {x: 27.437477, y: 53.804787}
       - {x: 42.216938, y: 65.52324}
-      - {x: 58.101566, y: 65.524055}
-      - {x: 57.746685, y: 77.186676}
+      - {x: 58.83391, y: 65.699814}
+      - {x: 58.81963, y: 77.24467}
       - {x: 44.116108, y: 77.23248}
       - {x: 44.24057, y: 93.41315}
       - {x: 52.68639, y: 101.126976}
       - {x: 133.10063, y: 100.97102}
       - {x: 140.73099, y: 94.306305}
       - {x: 140.67949, y: 77.229706}
-      - {x: 68.78088, y: 77.250015}
-      - {x: 68.826294, y: 65.54927}
+      - {x: 67.96893, y: 77.134026}
+      - {x: 68.09395, y: 65.46139}
       - {x: 83.0347, y: 65.52709}
       - {x: 83.057755, y: 57.5802}
       - {x: 86.36188, y: 57.60965}
@@ -8060,7 +8175,7 @@ Transform:
   m_Children:
   - {fileID: 1474708380}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1530631299
 Rigidbody2D:
@@ -8213,7 +8328,7 @@ RectTransform:
   - {fileID: 565176632}
   - {fileID: 756908202}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8347,7 +8462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f40990ef7ec9de4c984b19bf827b73c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cantidadPuntos: 300
+  cantidadPuntos: 200
   puntaje: {fileID: 880493659}
 --- !u!1 &1549073619
 GameObject:
@@ -8477,7 +8592,7 @@ RectTransform:
   - {fileID: 836259897}
   - {fileID: 1938529377}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8894,7 +9009,7 @@ GameObject:
   - component: {fileID: 1648394102}
   m_Layer: 0
   m_Name: Kebab
-  m_TagString: Hamburguesa
+  m_TagString: Kebab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8926,7 +9041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f40990ef7ec9de4c984b19bf827b73c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cantidadPuntos: 300
+  cantidadPuntos: 1500
   puntaje: {fileID: 880493659}
 --- !u!70 &1648394103
 CapsuleCollider2D:
@@ -9682,7 +9797,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1833841959
 GameObject:
@@ -9789,7 +9904,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &1833841963
 CapsuleCollider2D:
@@ -9985,7 +10100,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1895417921
 BoxCollider2D:
@@ -10330,7 +10445,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10639,7 +10754,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2045509768
 Rigidbody2D:
@@ -11070,7 +11185,7 @@ GameObject:
   - component: {fileID: 2095537040}
   m_Layer: 0
   m_Name: Chees
-  m_TagString: Hamburguesa
+  m_TagString: Chees
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11102,7 +11217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f40990ef7ec9de4c984b19bf827b73c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cantidadPuntos: 300
+  cantidadPuntos: 700
   puntaje: {fileID: 880493659}
 --- !u!70 &2095537041
 CapsuleCollider2D:
@@ -11289,7 +11404,7 @@ Transform:
   - {fileID: 792576436}
   - {fileID: 1549073620}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2111591482
 GameObject:
@@ -11406,7 +11521,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2114753264
 Animator:
@@ -11533,7 +11648,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5492564167483317389, guid: 82e7e7c8e60c79a49b3c8ba2e0d4b1d9, type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5492564167483317389, guid: 82e7e7c8e60c79a49b3c8ba2e0d4b1d9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11582,3 +11697,64 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 131157287976919786, guid: 82e7e7c8e60c79a49b3c8ba2e0d4b1d9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 82e7e7c8e60c79a49b3c8ba2e0d4b1d9, type: 3}
+--- !u!1001 &5302634443441531661
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5302634444921943639, guid: f2748914f8e50df4f8c66d58dea7cf09, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302634444921943639, guid: f2748914f8e50df4f8c66d58dea7cf09, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -55.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302634444921943639, guid: f2748914f8e50df4f8c66d58dea7cf09, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 131.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302634444921943639, guid: f2748914f8e50df4f8c66d58dea7cf09, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302634444921943639, guid: f2748914f8e50df4f8c66d58dea7cf09, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302634444921943639, guid: f2748914f8e50df4f8c66d58dea7cf09, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302634444921943639, guid: f2748914f8e50df4f8c66d58dea7cf09, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302634444921943639, guid: f2748914f8e50df4f8c66d58dea7cf09, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302634444921943639, guid: f2748914f8e50df4f8c66d58dea7cf09, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302634444921943639, guid: f2748914f8e50df4f8c66d58dea7cf09, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302634444921943639, guid: f2748914f8e50df4f8c66d58dea7cf09, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302634444921943647, guid: f2748914f8e50df4f8c66d58dea7cf09, type: 3}
+      propertyPath: m_Name
+      value: Mosca Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302634444921943647, guid: f2748914f8e50df4f8c66d58dea7cf09, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f2748914f8e50df4f8c66d58dea7cf09, type: 3}
