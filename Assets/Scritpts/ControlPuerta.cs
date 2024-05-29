@@ -10,7 +10,7 @@ public class ControlPuerta : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Mosca"))
+        if (other.CompareTag("Mosca")|| other.CompareTag("Jerry"))
         {
             if (puertaAbierta)
             {

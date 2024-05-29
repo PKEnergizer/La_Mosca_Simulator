@@ -6,6 +6,9 @@ public class IA_Enemy : MonoBehaviour
 {
     public List<MonoBehaviour> waypointProviders; // Lista de scripts de rutas disponibles
     private IWaypointProvider currentWaypointProvider; // Ruta actual
+    public Transform player; // Referencia al jugador
+    public float detectionRadius = 5f; // Radio de detección
+    public float chaseSpeed = 3f; // Velocidad de persecución
 
     void Start()
     {
@@ -27,6 +30,28 @@ public class IA_Enemy : MonoBehaviour
     }
 
     void Update()
+    {
+        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+
+        if (distanceToPlayer < detectionRadius)
+        {
+            // Perseguir al jugador
+            ChasePlayer();
+        }
+        else
+        {
+            // Seguir la ruta de waypoints
+            FollowWaypoints();
+        }
+    }
+
+    void ChasePlayer()
+    {
+        // Mover al enemigo hacia el jugador
+        transform.position = Vector2.MoveTowards(transform.position, player.position, chaseSpeed * Time.deltaTime);
+    }
+
+    void FollowWaypoints()
     {
         // Verificar si hay un proveedor de waypoints seleccionado
         if (currentWaypointProvider != null)

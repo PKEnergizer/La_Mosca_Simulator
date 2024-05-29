@@ -11,6 +11,7 @@ TagManager:
   - Coche
   - Heart
   - Enemy
+  - Jerry
   layers:
   - Default
   - TransparentFX
