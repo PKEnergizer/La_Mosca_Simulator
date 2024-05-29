@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Vidas: " + vidas);
+        //Debug.Log("Vidas: " + vidas);
     }
 
     // Cambiar el color de los corazones
