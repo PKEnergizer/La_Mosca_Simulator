@@ -9,6 +9,8 @@ public class IA_Enemy : MonoBehaviour
     public Transform player; // Referencia al jugador
     public float detectionRadius = 5f; // Radio de detección
     public float chaseSpeed = 3f; // Velocidad de persecución
+    public Transform manosController; // Referencia al objeto ManosController
+    public float proximityRadius = 3f; // Radio de proximidad para teletransportación
 
     void Start()
     {
@@ -33,6 +35,12 @@ public class IA_Enemy : MonoBehaviour
     {
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
+        if (distanceToPlayer < proximityRadius)
+        {
+            // Teletransportar ManosController a la posición del jugador
+            TeleportManosController();
+        }
+
         if (distanceToPlayer < detectionRadius)
         {
             // Perseguir al jugador
@@ -42,6 +50,14 @@ public class IA_Enemy : MonoBehaviour
         {
             // Seguir la ruta de waypoints
             FollowWaypoints();
+        }
+    }
+
+    void TeleportManosController()
+    {
+        if (manosController != null)
+        {
+            manosController.position = player.position;
         }
     }
 
