@@ -4,21 +4,15 @@ using System.Collections.Generic;
 
 public class IA_Enemy : MonoBehaviour
 {
-    public Animator animator; // Referencia al Animator Controller del enemigo
     public List<MonoBehaviour> waypointProviders; // Lista de scripts de rutas disponibles
     private IWaypointProvider currentWaypointProvider; // Ruta actual
 
     void Start()
     {
-        if (!animator)
-        {
-            animator = GetComponent<Animator>();
-        }
-
         // Seleccionar una ruta aleatoriamente al inicio
         SelectRandomWaypointProvider();
 
-        // Retrasar la teletransportación de Jerry al primer waypoint
+        // Retrasar la teletransportación al primer waypoint
         StartCoroutine(TeleportToWaypoint());
     }
 
@@ -47,9 +41,6 @@ public class IA_Enemy : MonoBehaviour
             // Mover al enemigo hacia el waypoint actual
             transform.position = Vector2.MoveTowards(transform.position, currentWaypointProvider.CurrentWaypoint.position, currentWaypointProvider.Speed * Time.deltaTime);
         }
-
-        // Actualizar el Animator Controller
-        UpdateAnimation();
     }
 
     void SelectRandomWaypointProvider()
@@ -70,25 +61,5 @@ public class IA_Enemy : MonoBehaviour
         {
             Debug.LogWarning("El script de ruta seleccionado no implementa IWaypointProvider.");
         }
-    }
-
-    void UpdateAnimation()
-    {
-        // Obtener la dirección del movimiento
-        Vector2 movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
-
-        // Determinar si Jerry se está moviendo hacia la derecha o izquierda
-        bool movingRight = movementDirection.x > 0;
-        bool movingLeft = movementDirection.x < 0;
-
-        // Determinar si Jerry se está moviendo hacia arriba o abajo
-        bool movingUp = movementDirection.y > 0;
-        bool movingDown = movementDirection.y < 0;
-
-        // Actualizar los parámetros del Animator según la dirección del movimiento
-        animator.SetBool("AnimacionDerecha", movingRight);
-        animator.SetBool("AnimacionIzquierda", movingLeft);
-        animator.SetBool("AnimacionArriba", movingUp);
-        animator.SetBool("AnimacionAbajo", movingDown);
     }
 }
