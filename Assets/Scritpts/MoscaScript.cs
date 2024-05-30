@@ -14,6 +14,9 @@ public class MoscaScript : MonoBehaviour
     // Objeto a activar en el inspector
     public GameObject objetoAActivar;
 
+    // Prefab a clonar
+    public GameObject prefabAClonar;
+
     // Lista de tags requeridos
     private HashSet<string> requiredTags = new HashSet<string> { "Hamburguesa", "Kebab", "Pizza", "Cereales", "Chees" };
     // Lista de tags tocados
@@ -59,6 +62,12 @@ public class MoscaScript : MonoBehaviour
         {
             // Añadir el tag a la lista de tocados si es uno de los requeridos
             touchedTags.Add(col.gameObject.tag);
+
+            // Clonar el prefab 10 veces
+            for (int i = 0; i < 10; i++)
+            {
+                Instantiate(prefabAClonar, transform.position, Quaternion.identity);
+            }
 
             // Verificar si todos los tags requeridos han sido tocados
             if (touchedTags.Count == requiredTags.Count)
