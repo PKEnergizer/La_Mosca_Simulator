@@ -4572,6 +4572,7 @@ MonoBehaviour:
   flashInterval: 0.3
   objetoAActivar: {fileID: 1261603405}
   prefabAClonar: {fileID: 207246561}
+  sceneToLoad: AnimaticFinal
 --- !u!1 &880493654
 GameObject:
   m_ObjectHideFlags: 0
@@ -4896,8 +4897,8 @@ RectTransform:
   m_GameObject: {fileID: 889744297}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.47, y: 2.47, z: 2.47}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2045939387}
   m_Father: {fileID: 2141509988}
@@ -5383,7 +5384,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 9
+  m_SortingOrder: 13
   m_TargetDisplay: 0
 --- !u!224 &939020481
 RectTransform:
@@ -6958,8 +6959,8 @@ RectTransform:
   m_GameObject: {fileID: 1371481734}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.47, y: 2.47, z: 2.47}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 789567297}
   m_Father: {fileID: 2141509988}
@@ -6967,7 +6968,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -63}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1371481736
@@ -8342,7 +8343,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1541910950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8983,8 +8984,8 @@ RectTransform:
   m_GameObject: {fileID: 1645597809}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.47, y: 2.47, z: 2.47}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1432336221}
   m_Father: {fileID: 2141509988}
@@ -8992,7 +8993,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -60.62}
+  m_AnchoredPosition: {x: 0, y: -187}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1645597811
@@ -11668,7 +11669,7 @@ GameObject:
   - component: {fileID: 2140264475}
   m_Layer: 0
   m_Name: Vater
-  m_TagString: Basura
+  m_TagString: Vater
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11681,8 +11682,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140264473}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 67.47, y: 99.02, z: 0.5217575}
-  m_LocalScale: {x: 9.7, y: 9.7, z: 9.7}
+  m_LocalPosition: {x: 66.97, y: 98.06, z: 0.5217575}
+  m_LocalScale: {x: 11.61, y: 11.61, z: 11.61}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 822395598}
@@ -11715,8 +11716,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.10825801, y: -0.15465476}
-  m_Size: {x: 0.37348333, y: 0.46627584}
+  m_Offset: {x: -0.108257994, y: 0.09987443}
+  m_Size: {x: 0.3734833, y: 0.37348482}
   m_Direction: 0
 --- !u!212 &2140264477
 SpriteRenderer:

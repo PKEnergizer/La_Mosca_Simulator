@@ -12,17 +12,15 @@ public class GameManager : MonoBehaviour
     public static int puntos = 0;
     public static bool estoyMuerto = false;
 
-    // Llamar a los GameObjects de las vidas
     GameObject heart5;
     GameObject heart4;
     GameObject heart3;
     GameObject heart2;
     GameObject heart1;
-    // GameObject "textoPuntos"
-    
+
     void Awake()
     {
-        if(Instance != null && Instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(this.gameObject);
         }
@@ -30,10 +28,21 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
     }
 
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        InitializeHearts();
+    }
+
     void Start()
+    {
+        InitializeHearts();
+    }
+
+    void InitializeHearts()
     {
         heart5 = GameObject.Find("Corazon5");
         heart4 = GameObject.Find("Corazon4");
@@ -44,13 +53,13 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log("Vidas: " + vidas);
+        // Debug.Log("Vidas: " + vidas);
     }
 
-    // Cambiar el color de los corazones
+    // color de los corazones
     public void UpdateVidas()
     {
-        switch(vidas)
+        switch (vidas)
         {
             case 4:
                 heart5.GetComponent<Image>().color = Color.black;
@@ -88,5 +97,22 @@ public class GameManager : MonoBehaviour
             Debug.Log("He muerto");
             SceneManager.LoadScene("GameOver");
         }
+    }
+
+    // Método para restablecer las vidas
+    public void RestablecerVidas()
+    {
+        vidas = 5;
+        InitializeHearts(); 
+        if (heart5 != null) heart5.GetComponent<Image>().color = Color.white;
+        if (heart4 != null) heart4.GetComponent<Image>().color = Color.white;
+        if (heart3 != null) heart3.GetComponent<Image>().color = Color.white;
+        if (heart2 != null) heart2.GetComponent<Image>().color = Color.white;
+        if (heart1 != null) heart1.GetComponent<Image>().color = Color.white;
+    }
+
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

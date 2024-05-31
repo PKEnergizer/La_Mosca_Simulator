@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MoscaScript : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class MoscaScript : MonoBehaviour
     private HashSet<string> requiredTags = new HashSet<string> { "Hamburguesa", "Kebab", "Pizza", "Cereales", "Chees" };
     // Lista de tags tocados
     private HashSet<string> touchedTags = new HashSet<string>();
+
+    // Nombre de la escena a cargar
+    public string sceneToLoad;
 
     void Start()
     {
@@ -77,6 +81,14 @@ public class MoscaScript : MonoBehaviour
                 {
                     objetoAActivar.SetActive(true);
                 }
+            }
+        }
+        else if (col.gameObject.tag == "Vater")
+        {
+            // Cambiar a la escena asignada en el inspector
+            if (!string.IsNullOrEmpty(sceneToLoad))
+            {
+                SceneManager.LoadScene(sceneToLoad);
             }
         }
     }

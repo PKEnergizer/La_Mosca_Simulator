@@ -10,6 +10,9 @@ public class AnimaticController2 : MonoBehaviour
     public string[] dialogues;  // Array de diálogos correspondientes
     public TextMeshProUGUI dialogueText; // Referencia al TextMeshPro en el panel de diálogo
     public float typingSpeed = 0.05f; // Velocidad de aparición de las letras
+    public GameObject dialogos; // Referencia al objeto "Dialogos"
+    public Animator dialogosAnimator; // Referencia al Animator del objeto "Dialogos"
+    private bool CreditosActiva = false; // Indica si los créditos están activos
 
     private int currentPanelIndex = 0;
     private bool isTyping = false;
@@ -38,9 +41,17 @@ public class AnimaticController2 : MonoBehaviour
 
     void NextPanel()
     {
-        if (currentPanelIndex < panels.Length - 1)
+        currentPanelIndex++;
+
+        if (currentPanelIndex == 2 && dialogos != null)
         {
-            currentPanelIndex++;
+            // Destruir el objeto "Dialogos" y activar la animación de los créditos
+            CreditosActiva = true;
+            Destroy(dialogos);
+        }
+
+        if (currentPanelIndex < panels.Length)
+        {
             ShowCurrentPanel();
         }
         else
@@ -60,5 +71,14 @@ public class AnimaticController2 : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
         isTyping = false;
+    }
+
+    void OnDestroy()
+    {
+        // Activar la transición a la animación de los créditos cuando el objeto "Dialogos" se destruye
+        if (CreditosActiva && dialogosAnimator != null)
+        {
+            dialogosAnimator.SetBool("CreditosActiva", true);
+        }
     }
 }

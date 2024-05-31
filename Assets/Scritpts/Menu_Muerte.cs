@@ -18,8 +18,7 @@ public class Menu_Muerte : MonoBehaviour
     void Start()
     {
         countdownTimer = countdownDuration;
-
-        // Asignar los métodos a los botones
+        
         retryButton.onClick.AddListener(Retry);
         quitButton.onClick.AddListener(Quit);
     }
@@ -28,25 +27,23 @@ public class Menu_Muerte : MonoBehaviour
     {
         countdownTimer -= Time.deltaTime;
 
-        // Actualizar el texto de la cuenta regresiva
         int seconds = Mathf.RoundToInt(countdownTimer);
         countdownText.text = seconds.ToString();
 
-        // Verificar si el contador ha llegado a cero
+    
         if (countdownTimer <= 0)
         {
-            // Redirigir a la escena "Menu_Inicial"
             SceneManager.LoadScene("Menu_Inicial");
         }
     }
 
-    // Método para el botón "Reintentar"
     public void Retry()
     {
+        // Reiniciar las vidas a 5
+        GameManager.Instance.RestablecerVidas();
         SceneManager.LoadScene("LvL_1");
     }
 
-    // Método para el botón "Salir"
     public void Quit()
     {
         SceneManager.LoadScene("Menu_Inicial");
