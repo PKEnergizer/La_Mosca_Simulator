@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 public class CircularWaypoints4 : MonoBehaviour, IWaypointProvider
 {
-    public List<Transform> waypoints; // Lista de waypoints para la ruta circular
-    public float speed = 2.0f; // Velocidad de movimiento entre waypoints
+    public List<Transform> waypoints;
+    public float speed = 2.0f;
 
     // Nombres de los waypoints en orden
     private string[] waypointNames = { "Punto_G", "Punto_F", "Punto_E", "Punto_C", "Punto_B",
