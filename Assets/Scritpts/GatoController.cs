@@ -45,6 +45,7 @@ public class GatoController : MonoBehaviour
     }
 }
 
+
     void ChasePlayer()
     {
         // Moverse hacia el jugador
