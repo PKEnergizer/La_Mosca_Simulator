@@ -17,12 +17,6 @@ public class Movimiento_Mosca : MonoBehaviour
 
     void Update()
     {
-        // Verificar si se ha presionado la tecla Escape
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            // Cerrar la aplicación
-            Application.Quit();
-        }
 
         // Obtener la entrada del jugador en el eje vertical (solo hacia arriba)
         float movimientoVertical = Input.GetAxis("Vertical");

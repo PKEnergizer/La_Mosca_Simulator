@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ClickyClicky : MonoBehaviour
 {
-    public AudioClip clickSound; // Sonido que se reproducirá al hacer clic en la imagen
+    public AudioClip clickSound;
     private AudioSource audioSource;
 
     void Start()

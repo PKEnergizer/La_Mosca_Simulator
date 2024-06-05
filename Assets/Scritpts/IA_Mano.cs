@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class IA_Mano : MonoBehaviour
 {
-    public Transform mosca; // Referencia al GameObject de la mosca
-    public float speed = 5.0f; // Velocidad de movimiento de la mano
-    public float attackRadius = 1.5f; // Radio para activar la secuencia de ataque
-    public float followRadius = 5.0f; // Radio de persecución de la mosca
-    public float attackDuration = 4.0f; // Duración del ataque (en segundos)
-    public float attackSpeed = 10.0f; // Velocidad de ataque de la mano
+    public Transform mosca; 
+    public float speed = 5.0f; 
+    public float attackRadius = 1.5f; 
+    public float followRadius = 5.0f; 
+    public float attackDuration = 4.0f; 
+    public float attackSpeed = 10.0f; 
 
-    private float attackTimer = 0.0f; // Temporizador para controlar el ataque
+    private float attackTimer = 0.0f; 
 
     void Update()
     {
@@ -18,20 +18,20 @@ public class IA_Mano : MonoBehaviour
         // Verificar si la mano está dentro del radio de persecución de la mosca
         if (distanceToMosca <= followRadius)
         {
-            // Orientar la mano hacia la mosca
+            
             Vector2 direction = (mosca.position - transform.position).normalized;
             transform.up = direction;
 
-            // Mover la mano hacia la mosca si no está en el radio de ataque
+            
             if (distanceToMosca > attackRadius)
             {
                 transform.position += (Vector3)direction * speed * Time.deltaTime;
             }
 
-            // Verificar si se debe activar el ataque
+            
             if (distanceToMosca <= attackRadius && attackTimer <= 0.0f)
             {
-                // Iniciar el temporizador de ataque
+                
                 attackTimer = attackDuration;
             }
         }
@@ -60,11 +60,9 @@ public class IA_Mano : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Verificar si la mano ha golpeado a la mosca
         if (other.CompareTag("Mosca"))
         {
-            // Realizar acciones al golpear a la mosca, como aplicar daño, iniciar animaciones, etc.
-            Debug.Log("¡La mano golpeó a la mosca!");
+            //Debug.Log("¡La mano golpeó a la mosca!");
         }
     }
 }

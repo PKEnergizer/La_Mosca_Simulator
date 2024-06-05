@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class GatoController : MonoBehaviour
 {
-    public Transform player; // Referencia al jugador (la mosca)
-    public float detectionRadius = 5f; // Radio de detección para perseguir al jugador
-    public float speed = 2f; // Velocidad de movimiento del gato
-    public Animator animator; // Referencia al componente Animator
+    public Transform player; 
+    public float detectionRadius = 5f; 
+    public float speed = 2f; 
+    public Animator animator; 
 
     private bool isChasing = false;
 
     void Start()
     {
-        // Asegúrate de que la animación de patrullaje esté en ejecución al inicio
+        
         animator.SetBool("isChasing", false);
     }
 

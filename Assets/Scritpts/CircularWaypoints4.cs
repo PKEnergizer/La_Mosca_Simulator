@@ -11,11 +11,11 @@ public class CircularWaypoints4 : MonoBehaviour, IWaypointProvider
                                        "Punto_A", "Punto_B", "Punto_C", "Punto_H", "Punto_I",
                                        "Punto_H", "Punto_E", "Punto_F", "Punto_G" };
 
-    private int currentWaypointIndex = 0; // Índice del waypoint actual
+    private int currentWaypointIndex = 0; 
 
     void Start()
     {
-        // Inicializar la lista de waypoints basada en los nombres
+        
         waypoints = new List<Transform>();
         foreach (var name in waypointNames)
         {
@@ -36,7 +36,7 @@ public class CircularWaypoints4 : MonoBehaviour, IWaypointProvider
 
     public void SetNextWaypoint()
     {
-        // Obtener el siguiente waypoint circularmente
+        
         currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Count;
     }
 }

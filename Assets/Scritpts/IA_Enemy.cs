@@ -4,13 +4,13 @@ using System.Collections.Generic;
 
 public class IA_Enemy : MonoBehaviour
 {
-    public List<MonoBehaviour> waypointProviders; // Lista de scripts de rutas disponibles
-    private IWaypointProvider currentWaypointProvider; // Ruta actual
-    public Transform player; // Referencia al jugador
-    public float detectionRadius = 5f; // Radio de detección
-    public float chaseSpeed = 3f; // Velocidad de persecución
-    public Transform manosController; // Referencia al objeto ManosController
-    public float proximityRadius = 3f; // Radio de proximidad para teletransportación
+    public List<MonoBehaviour> waypointProviders; 
+    private IWaypointProvider currentWaypointProvider; 
+    public Transform player; 
+    public float detectionRadius = 5f; 
+    public float chaseSpeed = 3f; 
+    public Transform manosController; 
+    public float proximityRadius = 3f; 
 
     void Start()
     {
@@ -72,14 +72,14 @@ public class IA_Enemy : MonoBehaviour
         // Verificar si hay un proveedor de waypoints seleccionado
         if (currentWaypointProvider != null)
         {
-            // Verificar si el enemigo ha llegado al waypoint actual
+            
             if (Vector2.Distance(transform.position, currentWaypointProvider.CurrentWaypoint.position) < 0.1f)
             {
                 // Mover al enemigo al siguiente waypoint
                 currentWaypointProvider.SetNextWaypoint();
             }
 
-            // Mover al enemigo hacia el waypoint actual
+            
             transform.position = Vector2.MoveTowards(transform.position, currentWaypointProvider.CurrentWaypoint.position, currentWaypointProvider.Speed * Time.deltaTime);
         }
     }
@@ -92,10 +92,10 @@ public class IA_Enemy : MonoBehaviour
             return;
         }
 
-        // Seleccionar un script de ruta aleatoriamente
+        
         var randomProvider = waypointProviders[Random.Range(0, waypointProviders.Count)];
 
-        // Asignar el script de ruta seleccionado al proveedor actual
+        
         currentWaypointProvider = randomProvider as IWaypointProvider;
 
         if (currentWaypointProvider == null)

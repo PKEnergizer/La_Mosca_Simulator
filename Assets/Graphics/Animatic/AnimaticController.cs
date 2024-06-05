@@ -6,10 +6,10 @@ using TMPro;
 
 public class AnimaticController : MonoBehaviour
 {
-    public GameObject[] panels; // Array de paneles
-    public string[] dialogues;  // Array de diálogos correspondientes
-    public TextMeshProUGUI dialogueText; // Referencia al TextMeshPro en el panel de diálogo
-    public float typingSpeed = 0.05f; // Velocidad de aparición de las letras
+    public GameObject[] panels; 
+    public string[] dialogues;  
+    public TextMeshProUGUI dialogueText; 
+    public float typingSpeed = 0.05f;
 
     private int currentPanelIndex = 0;
     private bool isTyping = false;

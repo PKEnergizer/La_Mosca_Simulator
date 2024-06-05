@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class Coche : MonoBehaviour
 {
-    public GameObject mosca; // Referencia al GameObject de la mosca
-    public GameObject coche; // Referencia al GameObject del coche
-    public Collider2D colliderCarretera; // Collider de la carretera
+    public GameObject mosca; 
+    public GameObject coche; 
+    public Collider2D colliderCarretera; 
 
-    private Animator cocheAnimator; // Referencia al Animator del coche
-    private bool moscaEnCarretera = false; // Variable para controlar si la mosca está en la carretera
+    private Animator cocheAnimator; 
+    private bool moscaEnCarretera = false; 
 
     void Start()
     {
-        cocheAnimator = coche.GetComponent<Animator>(); // Obtener el Animator del coche
+        cocheAnimator = coche.GetComponent<Animator>(); 
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject == mosca && other.IsTouching(colliderCarretera))
         {
-            moscaEnCarretera = true; // La mosca está en la carretera
+            moscaEnCarretera = true; 
             Debug.Log("ACTIVA ANIMATOR COCHE");
             cocheAnimator.SetTrigger("EnCarretera");
         }

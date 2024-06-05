@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class Manos_IA : MonoBehaviour
 {
-    public Transform Mosca; // Referencia al jugador "Mosca"
-    public float detectionRadius = 10f; // Radio de detección
-    public float stopRadius = 3f; // Radio mínimo de distancia
-    public float moveSpeed = 5f; // Velocidad de movimiento
+    public Transform Mosca; 
+    public float detectionRadius = 10f; 
+    public float stopRadius = 3f; 
+    public float moveSpeed = 5f; 
 
     void Update()
     {
@@ -23,7 +23,7 @@ public class Manos_IA : MonoBehaviour
 
     void FollowPlayer()
     {
-        // Mover el objeto "ManosController" hacia el jugador
+
         Vector2 direction = (Mosca.position - transform.position).normalized;
         transform.position = Vector2.MoveTowards(transform.position, Mosca.position, moveSpeed * Time.deltaTime);
     }

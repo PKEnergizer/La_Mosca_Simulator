@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class CircularWaypoints : MonoBehaviour, IWaypointProvider
 {
     public List<Transform> waypoints; // Lista de waypoints para la ruta circular
-    public float speed = 2.0f; // Velocidad de movimiento entre waypoints
+    public float speed = 2.0f;
 
     // Nombres de los waypoints en orden
     private string[] waypointNames = { "Punto_A", "Punto_B", "Punto_C", "Punto_D", "Punto_E",
@@ -12,11 +12,11 @@ public class CircularWaypoints : MonoBehaviour, IWaypointProvider
                                        "Punto_I", "Punto_H", "Punto_C", "Punto_J", "Punto_K",
                                        "Punto_J", "Punto_B", "Punto_A" };
 
-    private int currentWaypointIndex = 0; // Índice del waypoint actual
+    private int currentWaypointIndex = 0;
 
     void Start()
     {
-        // Inicializar la lista de waypoints basada en los nombres
+        
         waypoints = new List<Transform>();
         foreach (var name in waypointNames)
         {
@@ -37,7 +37,7 @@ public class CircularWaypoints : MonoBehaviour, IWaypointProvider
 
     public void SetNextWaypoint()
     {
-        // Obtener el siguiente waypoint circularmente
+        
         currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Count;
     }
 }

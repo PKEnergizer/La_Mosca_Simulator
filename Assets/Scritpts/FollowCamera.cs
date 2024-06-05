@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 public class FollowCamera : MonoBehaviour
 {
-    public Transform cameraTransform; // La transformación de la cámara que queremos seguir
-    public Vector3 offset; // Desplazamiento opcional desde la posición de la cámara
+    public Transform cameraTransform; 
+    public Vector3 offset; 
 
     void Update()
     {
         if (cameraTransform != null)
         {
-            // Mover el contenedor para que siga la posición de la cámara con un desplazamiento opcional
+            
             transform.position = cameraTransform.position + offset;
         }
         else

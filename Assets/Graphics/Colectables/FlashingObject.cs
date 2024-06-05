@@ -20,7 +20,7 @@ public class FlashingObject : MonoBehaviour
 
         originalColor = spriteRenderer.color;
 
-        // Iniciar el efecto de titileo
+      
         StartCoroutine(Flash());
     }
 
