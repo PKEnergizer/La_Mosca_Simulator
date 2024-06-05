@@ -7,9 +7,8 @@ public class Puntuacion : MonoBehaviour
 {
     private TextMeshProUGUI textMesh;
     private float puntos;
-    private Vector2 posicionOriginal; // Posición original del texto
+    private Vector2 posicionOriginal; 
 
-    // Variables para el temblor del texto
     public float intensidadTemblor = 0.1f; // Intensidad inicial del temblor
     public float duracionTemblor = 0.2f; // Duración del temblor al sumar puntos
     private float tiempoInicioTemblor; // Tiempo en que comenzó el temblor
@@ -26,7 +25,6 @@ public class Puntuacion : MonoBehaviour
     {
         textMesh.text = puntos.ToString("0");
 
-        // Aplicar temblor si ha pasado el tiempo de duración del temblor
         if (Time.time - tiempoInicioTemblor < duracionTemblor)
         {
             float offsetX = Random.Range(-intensidadTemblor, intensidadTemblor);
@@ -36,7 +34,7 @@ public class Puntuacion : MonoBehaviour
         }
         else
         {
-            // Restaurar la posición original del texto al finalizar el temblor
+            
             textMesh.rectTransform.anchoredPosition = posicionOriginal;
         }
     }
@@ -44,6 +42,6 @@ public class Puntuacion : MonoBehaviour
     public void SumarPuntos(float puntosEntrada)
     {
         puntos += puntosEntrada;
-        tiempoInicioTemblor = Time.time; // Registrar el tiempo de inicio del temblor
+        tiempoInicioTemblor = Time.time; 
     }
 }

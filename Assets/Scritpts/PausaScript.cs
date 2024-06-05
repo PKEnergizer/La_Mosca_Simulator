@@ -11,7 +11,6 @@ public class PausaScript : MonoBehaviour
     [SerializeField] GameObject menuPausa;
     [SerializeField] GameObject menuOpciones;
     
-    // Start is called before the first frame update
     void Start()
     {
         //menuPausa = GameObject.Find("PanelPausa");

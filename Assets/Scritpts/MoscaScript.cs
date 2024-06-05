@@ -64,10 +64,8 @@ public class MoscaScript : MonoBehaviour
         }
         else if (requiredTags.Contains(col.gameObject.tag))
         {
-            // Añadir el tag a la lista de tocados si es uno de los requeridos
             touchedTags.Add(col.gameObject.tag);
 
-            // Clonar el prefab 10 veces
             for (int i = 0; i < 10; i++)
             {
                 Instantiate(prefabAClonar, transform.position, Quaternion.identity);
@@ -76,7 +74,6 @@ public class MoscaScript : MonoBehaviour
             // Verificar si todos los tags requeridos han sido tocados
             if (touchedTags.Count == requiredTags.Count)
             {
-                // Activar el objeto asignado en el inspector
                 if (objetoAActivar != null)
                 {
                     objetoAActivar.SetActive(true);
@@ -85,7 +82,6 @@ public class MoscaScript : MonoBehaviour
         }
         else if (col.gameObject.tag == "Vater")
         {
-            // Cambiar a la escena asignada en el inspector
             if (!string.IsNullOrEmpty(sceneToLoad))
             {
                 SceneManager.LoadScene(sceneToLoad);

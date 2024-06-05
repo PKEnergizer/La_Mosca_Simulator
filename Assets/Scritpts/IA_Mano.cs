@@ -45,6 +45,7 @@ public class IA_Mano : MonoBehaviour
                 // Realizar el ataque "Manotazo"
                 ManotazoAttack();
             }
+            
         }
     }
 

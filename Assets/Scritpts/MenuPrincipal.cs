@@ -19,43 +19,35 @@ public class MenuPrincipal : MonoBehaviour
 
     private void OnMouseDown()
     {
-        // Verificar si el collider del objeto es el Jugar_button
         if (gameObject.name == "Jugar_button")
         {
             Jugar();
         }
-        // Verificar si el collider del objeto es el salir_button
         else if (gameObject.name == "Salir_button")
         {
             Salir();
         }
-        // Verificar si el collider del objeto es el opciones_button
         else if (gameObject.name == "Opciones_button")
         {
             Opciones();
         }
     }
 
-    // Método para cambiar a la escena de juego
     public void Jugar()
     {
         SceneManager.LoadScene(nombreDeEscenaJuego);
     }
 
-    // Método para cerrar la aplicación
     public void Salir()
     {
         Debug.Log("Salir");
         Application.Quit();
     }
-
-    // Método para abrir el menú de opciones
     public void Opciones()
     {
         Debug.Log("Abrir menú de opciones...");
     }
 
-    // Vibración del botón al pasar el puntero
     private void OnMouseEnter()
     {
         StartCoroutine(VibrarBoton());

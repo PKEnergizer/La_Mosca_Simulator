@@ -15,12 +15,12 @@ public class UI : MonoBehaviour
 
     void Update()
     {
-        // Obtener la posición del ratón en la pantalla
+        
         Vector3 posicionRaton = Input.mousePosition;
 
         
         Vector3 posicionEnMundo = Camera.main.ScreenToWorldPoint(posicionRaton);
-        posicionEnMundo.z = 0f; // Asegurarse de que el puntero esté en el mismo plano que el juego
+        posicionEnMundo.z = 0f; 
 
         
         puntero.transform.position = posicionEnMundo;
